@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>e8a93142-63e3-41b0-9247-ab40fe685199</groupId>
+		<artifactId>parent-pom</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../parent-pom/pom.xml</relativePath>
+	</parent>
+	<groupId>e8a93142-63e3-41b0-9247-ab40fe685199</groupId>
+	<artifactId>check-in-papi-app</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>mule-application</packaging>
+	<name>check-in-papi</name>
+
+	<properties>
+		<api.groupId>e8a93142-63e3-41b0-9247-ab40fe685199</api.groupId>
+		<api.artifactId>check-in-papi</api.artifactId>
+		<api.version>1.0.0</api.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.mule.connectors</groupId>
+			<artifactId>mule-http-connector</artifactId>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<!-- check-in-papi API -->
+			<groupId>${api.groupId}</groupId>
+			<artifactId>${api.artifactId}</artifactId>
+			<version>${api.version}</version>
+			<classifier>oas</classifier>
+			<type>zip</type>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-apikit-module</artifactId>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+	</dependencies>
+</project>

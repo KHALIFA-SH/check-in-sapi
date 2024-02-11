@@ -1,0 +1,26 @@
+api:
+  groupId: "${api.groupId}"
+  artifactId: "${api.artifactId}"
+  artifactVersion: "${api.version}"
+  apiVersion: "v1"
+  apiId: "18901833"
+  spec: "resource::${api.groupId}:${api.artifactId}:${api.artifactVersion}:oas:zip:api.json"
+https:
+  port: "8081"
+  host: "0.0.0.0"
+  protocol: "HTTPS"
+  
+  
+tls:
+  keystore:
+    type: "pkcs12"
+    path: "check-in-papi.p12"
+    alias: "server"
+    keyPassword: "mule12345"
+    password: "mule12345"
+  truststore:
+    type: ""
+    path: ""
+    alias: ""
+    keyPassword: ""
+    password: ""
